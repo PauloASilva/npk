@@ -635,7 +635,7 @@ angular
           // TODO: Switch '<' at 551:115 to '>' to pick bigger instances.
           // Is better if cheaper or same price with more GPUs
           if ((data[i].price / list[data[i].instanceType]) < result.price ||
-             ((data[i].price / list[data[i].instanceType]) < (result.price + 0.01) && list[data[i].instanceType] < result.gpus) ||
+             ((data[i].price / list[data[i].instanceType]) < (result.price + 0.01) && list[data[i].instanceType] > result.gpus) ||
              result.price == null) {
             result = {
               cheapestRegion: data[i].cheapestRegion,
