@@ -553,6 +553,7 @@ angular
       });
    }])
   .controller('campaignCtrl', ['$scope', '$routeParams', '$timeout', 'pricingSvc', 'DICTIONARY_BUCKETS', 'USERDATA_BUCKET', 'APIGATEWAY_URL', function($scope, $routeParams, $timeout, pricingSvc, DICTIONARY_BUCKETS, USERDATA_BUCKET, APIGATEWAY_URL) {
+    const SPOT_INSTANCES_LIMIT = 1024;
 
     $scope.pricingSvc = pricingSvc;
     // window.campaignCtrl = $scope;
@@ -1115,7 +1116,7 @@ angular
         }
       }
 
-      if ($scope.instanceCount < 1 || $scope.instanceCount > 6) {
+      if ($scope.instanceCount < 1 || $scope.instanceCount > SPOT_INSTANCES_LIMIT) {
         $scope.orderErrors.push("Invalid instance count.");
       }
 
@@ -1285,7 +1286,7 @@ angular
       $("#instance_count").ionRangeSlider({
         type: "single",
         min: 1,
-        max: 6,
+        max: SPOT_INSTANCES_LIMIT,
         step: 1,
         grid: true,
         grid_num: 1,
