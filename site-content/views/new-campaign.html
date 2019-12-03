@@ -433,14 +433,10 @@
 
                         <div class="col-lg-3 text-center" style="padding-top: 50px;">
                           <span style="font-size: 72px;">
-                            ${{ totalPrice.toFixed(2).toString().split('.')[0] | number }}
-                          </span>
-                          <span style="font-size: 30px; position: relative; top: -32px; left: -15px;">
-                            <u>
-                              {{ totalPrice.toFixed(2).toString().split('.')[1] }}
-                            </u>
+                            <i class="icon-clock"></i>&nbsp;{{ timeLeft | number }}
                           </span>
                           <br />
+                          <span>remaining required time (min)</span>
                           <button class="btn btn-lg waves-effect waves-light m-1" ng-click="verifyOrder()" ng-class="totalCoverage < 125 || totalCoverage > 2400 ? 'btn-dark' : 'btn-success'">
                             <i class="fa fa-crosshairs"></i>
                             Execute
