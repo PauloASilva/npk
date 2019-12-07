@@ -921,7 +921,7 @@ angular
       var countDuration = $scope.totalDuration / $scope.instanceCount;
       $scope.totalCoverage =  (($scope.instanceDuration * 60 * 60) / countDuration) * 100;
       // $scope.totalPrice = $scope.pricingSvc.spotPrice[$scope.selectedInstance].price * $scope.instanceCount * $scope.instanceDuration;
-      $scope.timeLeft = Math.ceil(($scope.totalDuration - $scope.instanceCount * $scope.instanceDuration * 60 * 60) / 60)
+      $scope.timeLeft = Math.ceil($scope.totalDuration / 60 / $scope.instanceCount)
       if ($scope.timeLeft < 0) {
         $scope.timeLeft = 0
       }
